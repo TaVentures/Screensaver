@@ -1,0 +1,153 @@
+:root {
+    --display-main: flex;
+    --display-none: none;
+    --zero: 0;
+    --bg-radial-gradien: repeating-radial-gradient(rgba(80, 201, 195, 1) var(--zero), rgba(150, 222, 218, .99) 100%);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    text-rendering:optimizeLegibility;
+}
+header,main,footer {
+    display: grid;
+}
+header{
+    grid-auto-rows: minmax(50px, auto);
+    grid-template-columns: repeat(3, 1fr);
+}
+nav {
+    display: contents;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+
+/* BUBBLES KEYFRAMES */
+@keyframes animateBubble {
+    from {
+        margin-top: 1000px
+    }
+    to {
+        margin-top: -100%
+    }
+}
+@keyframes sideWays {
+    from {
+        margin-left: var(--zero)
+    }
+    to {
+        margin-left: 50px
+    }
+}
+
+#bubbles-screensaver {
+    position: fixed;
+    bottom: var(--zero);
+    left: var(--zero);
+    right: var(--zero);
+    top: var(--zero);
+    z-index: -9;
+    background: var(--bg-radial-gradien);
+    image-rendering: optimizeSpeed;
+}
+
+/* BUBBLES OBJECTS */
+#bubbles-screensaver .bubble {
+    border-radius: 50%;
+    box-shadow: var(--zero) 20px 30px rgba(0, 0, 0, 0.2), inset var(--zero) 10px 30px 5px rgba(255, 255, 255, 1);
+    height: 200px;
+    position: absolute;
+    width: 200px;
+    transform-origin: center center;
+    transition: all 0.5s ease 0s;
+}
+
+#bubbles-screensaver .bubble:after {
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    box-shadow: inset var(--zero) 20px 30px rgba(255, 255, 255, 0.3);
+    content: "";
+    height: 180px;
+    left: 10px;
+    position: absolute;
+    width: 180px;
+}
+
+#bubbles-screensaver .bubble:hover {
+    transform: matrix3d(1, var(--zero), var(--zero), var(--zero), var(--zero), var(--zero), 1, 0.008, var(--zero), -1, var(--zero), var(--zero), var(--zero), var(--zero), var(--zero), 1);
+}
+
+/* BUBBLES ANIMATIONS */
+#bubbles-screensaver .x1 {
+    animation: animateBubble 25s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    left: -5%;
+    top: 5%;
+    transform: scale(0.6);
+}
+
+#bubbles-screensaver .x2 {
+    animation: animateBubble 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    left: 5%;
+    top: 80%;
+    transform: scale(0.4);
+}
+
+#bubbles-screensaver .x3 {
+    animation: animateBubble 28s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    left: 10%;
+    top: 40%;
+    transform: scale(0.7);
+}
+
+#bubbles-screensaver .x4 {
+    animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+    left: 20%;
+    top: 0;
+    transform: scale(0.3);
+}
+
+#bubbles-screensaver .x5 {
+    animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    left: 30%;
+    top: 50%;
+    transform: scale(0.5);
+}
+
+#bubbles-screensaver .x6 {
+    animation: animateBubble 21s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    left: 50%;
+    top: 0;
+    transform: scale(0.8);
+}
+
+#bubbles-screensaver .x7 {
+    animation: animateBubble 20s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    left: 65%;
+    top: 70%;
+    transform: scale(0.4);
+}
+
+#bubbles-screensaver .x8 {
+    animation: animateBubble 22s linear infinite, sideWays 3s ease-in-out infinite alternate;
+    left: 80%;
+    top: 10%;
+    transform: scale(0.3);
+}
+
+#bubbles-screensaver .x9 {
+    animation: animateBubble 29s linear infinite, sideWays 4s ease-in-out infinite alternate;
+    left: 90%;
+    top: 50%;
+    transform: scale(0.6);
+}
+
+#bubbles-screensaver .x10 {
+    animation: animateBubble 26s linear infinite, sideWays 2s ease-in-out infinite alternate;
+    left: 80%;
+    top: 80%;
+    transform: scale(0.3);
+}
+/* BUBBLES END*/
